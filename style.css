@@ -1,0 +1,339 @@
+/* ==========================================
+   SLD PC - BLUE PANEL THEME
+   Các dải màu xanh đồng bộ với banner SLD PC
+   ========================================== */
+
+:root {
+  --navy-950: #0C1930;
+  --navy-900: #102448;
+  --navy-850: #142B50;
+  --navy-800: #172B4D;
+  --blue-700: #173B78;
+  --blue-600: #2055A6;
+  --blue-500: #2563EB;
+  --cyan: #22D3EE;
+  --page-bg: #0A1427;
+  --panel-a: #102448;
+  --panel-b: #142B50;
+  --card: #24436E;
+  --card-hover: #2B5082;
+  --text: #F4F8FF;
+  --muted: #B8C9E2;
+  --line: rgba(151, 190, 245, 0.22);
+  --light-surface: #EAF1FF;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--page-bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+.wrapper {
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* HEADER - dải xanh Navy đậm */
+header {
+  background: var(--navy-950);
+  color: #FFFFFF;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.logo {
+  color: #FFFFFF;
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  letter-spacing: 0.5px;
+}
+
+nav a {
+  color: #EAF3FF;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 15px;
+  padding: 5px 0;
+  transition: color .2s ease;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--cyan);
+}
+
+/* BANNER - dải xanh hoàng gia */
+.hero {
+  width: 90%;
+  max-width: 1000px;
+  margin: 22px auto;
+  padding: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  background: linear-gradient(120deg, #173B78, #2563EB 55%, #173B78);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, .28);
+}
+
+.hero img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* LIÊN KẾT VÀ NÚT */
+a {
+  color: #8DBBFF;
+  transition: color .2s ease;
+}
+
+a:hover {
+  color: var(--cyan);
+}
+
+.btn,
+button {
+  display: inline-block;
+  background: var(--blue-500);
+  color: #FFFFFF;
+  border: 1px solid rgba(255,255,255,.12);
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.btn:hover,
+button:hover {
+  background: #174DBB;
+  color: #FFFFFF;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 16px rgba(34, 211, 238, .16);
+}
+
+/* KHU VỰC NỘI DUNG - dải nền Navy tối full chiều ngang */
+#san-pham {
+  position: relative;
+  isolation: isolate;
+  width: 90%;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 28px 0 36px;
+}
+
+#san-pham::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100vw;
+  transform: translateX(-50%);
+  background: linear-gradient(180deg, #0C1930 0%, #102448 48%, #0C1930 100%);
+}
+
+/* Tiêu đề danh mục */
+h1 {
+  color: #FFFFFF;
+  font-size: 28px;
+}
+
+h2 {
+  color: #FFFFFF;
+  font-size: 22px;
+  margin-top: 28px;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(34, 211, 238, .35);
+}
+
+h3 {
+  color: #FFFFFF;
+  margin-top: 0;
+}
+
+/* CÁC DẢI PANEL xen kẽ cho từng nhóm sản phẩm */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 12px;
+  padding: 12px;
+  margin: 0 0 22px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(23, 59, 120, .42);
+}
+
+.row:nth-of-type(even) {
+  background: rgba(36, 67, 110, .42);
+}
+
+.row .box {
+  flex: 1 1 calc(33.333% - 12px);
+  min-width: 0;
+}
+
+/* THẺ SẢN PHẨM */
+.box {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid rgba(177, 207, 249, .20);
+  border-radius: 9px;
+  padding: 14px;
+  margin-bottom: 10px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, .16);
+}
+
+.product {
+  border-top: 3px solid var(--cyan);
+  transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+}
+
+.product:hover {
+  background: var(--card-hover);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, .25);
+}
+
+.picture {
+  background: var(--light-surface);
+  text-align: center;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.picture img {
+  display: block;
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+}
+
+.product p {
+  margin: 6px 0;
+  color: var(--muted);
+}
+
+.product b {
+  color: #67DDF4;
+}
+
+/* GIỚI THIỆU VÀ LIÊN HỆ */
+label {
+  color: #EAF3FF;
+  font-weight: bold;
+}
+
+input,
+textarea {
+  width: 98%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid rgba(177, 207, 249, .35);
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  color: #17243B;
+  background: #F8FBFF;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 3px rgba(34, 211, 238, .15);
+}
+
+.small {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* FOOTER - dải Navy đậm */
+footer {
+  background: var(--navy-950);
+  color: #DCEBFF;
+  padding: 15px 0;
+  margin-top: 0;
+  font-size: 14px;
+  border-top: 1px solid var(--line);
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .wrapper,
+  #san-pham {
+    width: 94%;
+  }
+
+  .hero {
+    width: 94%;
+    margin: 16px auto;
+  }
+
+  .row .box {
+    flex: 1 1 calc(50% - 12px);
+  }
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+  .wrapper,
+  #san-pham {
+    width: 94%;
+  }
+
+  .hero {
+    width: 94%;
+    margin: 12px auto;
+    border-radius: 6px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  nav a {
+    margin-right: 10px;
+  }
+
+  .row {
+    display: block;
+    padding: 10px;
+  }
+
+  .row .box {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .picture img {
+    height: 180px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+  }
+}
